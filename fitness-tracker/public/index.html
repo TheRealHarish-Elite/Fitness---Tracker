@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPL Tracker — Sign in</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="auth-layout">
+        <section class="auth-card">
+            <p class="eyebrow">CS50 Final Project</p>
+            <h1>PPL Tracker</h1>
+            <p class="lede">Log Push, Pull, and Legs sessions. Spot stalled lifts before they linger.</p>
+
+            <div class="tabs" role="tablist">
+                <button class="tab is-active" type="button" data-mode="login">Log in</button>
+                <button class="tab" type="button" data-mode="register">Register</button>
+            </div>
+
+            <form id="auth-form">
+                <label>
+                    Username
+                    <input type="text" name="username" autocomplete="username" required minlength="3" maxlength="50" pattern="[A-Za-z0-9_]{3,50}" title="Letters, numbers, and underscores only">
+                </label>
+                <label>
+                    Password
+                    <input type="password" name="password" autocomplete="current-password" required minlength="6">
+                </label>
+                <p id="auth-hint" class="muted">New here? Click Register first — logging in only works after an account exists.</p>
+                <p id="auth-error" class="error" hidden></p>
+                <button class="btn primary" type="submit" id="auth-submit">Log in</button>
+            </form>
+        </section>
+    </main>
+    <script src="/js/auth.js"></script>
+</body>
+</html>

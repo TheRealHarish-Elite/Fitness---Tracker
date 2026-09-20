@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log workout — PPL Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/dashboard.html">PPL Tracker</a>
+        <nav>
+            <a href="/dashboard.html">Dashboard</a>
+            <a class="is-active" href="/log.html">Log workout</a>
+            <button class="btn ghost" type="button" id="logout-btn">Log out</button>
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="page-head">
+            <div>
+                <p class="eyebrow">New session</p>
+                <h1>Log a workout</h1>
+            </div>
+        </div>
+
+        <form id="workout-form" class="workout-form">
+            <div class="form-grid">
+                <label>
+                    Day type
+                    <select name="day_type" id="day-type" required>
+                        <option value="push">Push</option>
+                        <option value="pull">Pull</option>
+                        <option value="legs">Legs</option>
+                    </select>
+                </label>
+                <label>
+                    Date
+                    <input type="date" name="performed_at" id="performed-at" required>
+                </label>
+            </div>
+
+            <label>
+                Notes <span class="muted">(optional)</span>
+                <textarea name="notes" rows="2" maxlength="500" placeholder="How did it feel?"></textarea>
+            </label>
+
+            <div class="section-head">
+                <h2>Exercises</h2>
+                <button class="btn ghost" type="button" id="add-exercise">Add exercise</button>
+            </div>
+            <p class="muted suggestions" id="suggestions"></p>
+            <div id="exercises"></div>
+
+            <p id="form-error" class="error" hidden></p>
+            <button class="btn primary" type="submit">Save workout</button>
+        </form>
+    </main>
+    <script src="/js/log.js"></script>
+</body>
+</html>
