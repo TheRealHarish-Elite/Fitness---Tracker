@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — PPL Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/dashboard.html">PPL Tracker</a>
+        <nav>
+            <a class="is-active" href="/dashboard.html">Dashboard</a>
+            <a href="/log.html">Log workout</a>
+            <button class="btn ghost" type="button" id="logout-btn">Log out</button>
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="page-head">
+            <div>
+                <p class="eyebrow" id="greeting">Welcome back</p>
+                <h1>Workout history</h1>
+            </div>
+            <a class="btn primary" href="/log.html">Log workout</a>
+        </div>
+
+        <section id="plateaus" class="plateau-list" hidden></section>
+
+        <div class="filters" role="group" aria-label="Filter by day type">
+            <button class="chip is-active" type="button" data-day="">All</button>
+            <button class="chip" type="button" data-day="push">Push</button>
+            <button class="chip" type="button" data-day="pull">Pull</button>
+            <button class="chip" type="button" data-day="legs">Legs</button>
+        </div>
+
+        <p id="list-error" class="error" hidden></p>
+        <section id="workouts" class="workout-list"></section>
+    </main>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
